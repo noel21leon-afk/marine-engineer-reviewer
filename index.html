@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#082f49">
+<meta name="description" content="MARINA-aligned Marine Engineer competency reviewer">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>Marine Engineer Reviewer</title>
+<style>
+:root{--bg:#06141c;--card:#0d2936;--card2:#113b4b;--text:#effaff;--muted:#a7c1cc;--accent:#18a9d2;--good:#39cf8f;--bad:#ff7070;--line:#24596a}
+*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;background:linear-gradient(160deg,#06141c,#092b3a);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+button{font:inherit;color:inherit}header{position:sticky;top:0;z-index:10;background:rgba(6,20,28,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:12px 15px}
+.brand{display:flex;align-items:center;gap:11px;max-width:820px;margin:auto}.logo{width:42px;height:42px;border-radius:12px;background:#08506a;display:grid;place-items:center;font-weight:900;border:1px solid #1aa8d0}.brand h1{font-size:17px;margin:0}.sub{font-size:11px;color:var(--muted)}
+main{max-width:820px;margin:auto;padding:15px 15px 100px}.hero{background:linear-gradient(145deg,#0e384a,#092631);border:1px solid #2a6578;border-radius:21px;padding:18px;margin-bottom:13px;box-shadow:0 12px 30px #0002}.hero h2{font-size:25px;line-height:1.12;margin:0 0 7px}.hero p{color:var(--muted);line-height:1.48;margin:7px 0}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:12px 0}.stat{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:13px}.stat b{font-size:21px}.stat span{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.card{background:rgba(13,41,54,.94);border:1px solid var(--line);border-radius:18px;padding:15px;margin:12px 0}.card h3{margin:0 0 8px}.small{font-size:12px;color:var(--muted);line-height:1.5}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}.btn{border:1px solid var(--line);background:var(--card2);border-radius:12px;padding:11px 10px;font-weight:750;cursor:pointer}.btn.primary{background:#0d9dca;border-color:#0d9dca;color:#00161f}.btn.install{background:#14583f;border-color:#267d5d}.btn:active{transform:scale(.99)}
+.pills{display:flex;flex-wrap:wrap;gap:6px}.pill{font-size:10px;padding:5px 8px;border-radius:999px;background:#123e4e;color:#a8deed}
+.hidden{display:none!important}.qmeta{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:11px}.progress{height:7px;background:#08202a;border-radius:20px;overflow:hidden;margin:9px 0 15px}.bar{height:100%;background:#16a9d4;width:0;transition:width .2s}
+.question{font-size:19px;line-height:1.42;font-weight:780;margin:0 0 13px}.option{display:block;width:100%;text-align:left;border:1px solid #2b5d6c;background:#09232f;border-radius:13px;padding:13px 12px;margin:8px 0;cursor:pointer}.option:hover{border-color:#42c8ea}.option.selected{border-color:#1aa8d0}.option.correct{border-color:var(--good);background:#0b3b2d}.option.wrong{border-color:var(--bad);background:#402226}
+.feedback{margin-top:12px;padding:12px;border-radius:12px;background:#08232e;border-left:4px solid var(--accent);font-size:12px;line-height:1.5}.feedback b{font-size:14px}.ref{margin-top:7px;color:#94d9eb;font-size:11px}
+.resultScore{font-size:44px;font-weight:900}.topicrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid #194757}.topicrow:last-child{border-bottom:0}.bar2{height:6px;background:#09212b;border-radius:10px;overflow:hidden;flex:1}.bar2 span{display:block;height:100%;background:#16a9d4}
+footer{position:fixed;bottom:0;left:0;right:0;z-index:20;background:rgba(5,17,24,.97);border-top:1px solid var(--line);padding:9px 12px;display:flex;justify-content:center;gap:8px;padding-bottom:calc(9px + env(safe-area-inset-bottom))}footer .btn{min-width:105px}
+.notice{font-size:11px;color:#9bb7c2;line-height:1.45}.notice strong{color:#dceef4}
+@media(min-width:650px){.grid{grid-template-columns:repeat(4,1fr)}.actions{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="logo">ME</div><div><h1>Marine Engineer Reviewer</h1><div class="sub">MARINA-aligned • Offline-first PWA</div></div></div></header>
+<main>
+<section id="home">
+<div class="hero">
+<h2>Study smarter.<br>Review anywhere.</h2>
+<p>Independent competency-based practice for Marine Engineer Officers. Install this app on your phone for offline review.</p>
+<div class="pills"><span class="pill">Function 1</span><span class="pill">Function 2</span><span class="pill">Function 3</span><span class="pill">OIC-EW</span></div>
+</div>
+<div class="grid">
+<div class="stat"><b id="qtotal">42</b><span>Practice Questions</span></div>
+<div class="stat"><b id="answered">0</b><span>Answered</span></div>
+<div class="stat"><b id="accuracy">0%</b><span>Accuracy</span></div>
+<div class="stat"><b id="streak">0</b><span>Current Streak</span></div>
+</div>
+<div class="card">
+<h3>Reviewer</h3>
+<div class="actions">
+<button class="btn primary" data-mode="mixed">Mixed Review</button>
+<button class="btn" data-mode="F1">Function 1</button>
+<button class="btn" data-mode="F2">Function 2</button>
+<button class="btn" data-mode="F3">Function 3</button>
+<button class="btn" data-mode="OIC">OIC-EW</button>
+<button class="btn primary" data-mode="mock">20-Q Mock</button>
+</div>
+</div>
+<div class="card">
+<h3>Install this app</h3>
+<p class="small">Use your browser's <strong>Add to Home Screen</strong> / <strong>Install App</strong> option. The app then opens like a normal mobile application and keeps the reviewer available offline.</p>
+<button id="installBtn" class="btn install hidden">Install Marine Engineer Reviewer</button>
+</div>
+<div class="card">
+<h3>Official-source basis</h3>
+<p class="notice"><strong>Primary basis:</strong> MARINA STCW Office Management Level Course syllabi and MARINA Competency Reviewer Portal information. This app is independent and is not an official MARINA application.</p>
+</div>
+</section>
+
+<section id="quiz" class="hidden">
+<div class="card">
+<div class="qmeta"><span id="counter"></span><span id="tag"></span></div>
+<div class="progress"><div id="bar" class="bar"></div></div>
+<div id="question" class="question"></div>
+<div id="options"></div>
+<div id="feedback" class="feedback hidden"></div>
+</div>
+</section>
+
+<section id="result" class="hidden">
+<div class="hero">
+<div class="small">RESULT</div>
+<div id="resultScore" class="resultScore">0%</div>
+<p id="resultText"></p>
+</div>
+<div class="card"><h3>Topic performance</h3><div id="breakdown"></div></div>
+<div class="card"><h3>Review advice</h3><p class="small">Read the explanation for every missed item. The objective is to understand the engineering principle and safe management decision—not simply memorize the letter of an answer.</p><button class="btn primary" onclick="goHome()">Back to Reviewer</button></div>
+</section>
+</main>
+<footer><button class="btn" onclick="goHome()">Home</button><button class="btn" onclick="resetProgress()">Reset</button></footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "Marine Engineer Reviewer",
+  "short_name": "ME Reviewer",
+  "description": "Offline-first MARINA-aligned competency reviewer for marine engineers.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#06141c",
+  "theme_color": "#082f49",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
